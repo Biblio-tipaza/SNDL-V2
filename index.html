@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استمارة معلومات المستخدم - SNDL</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; direction: rtl; }
         .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 8px solid #8cb43f; }
         .header-image { text-align: center; margin-bottom: 20px; }
         .header-image img { max-width: 80%; height: auto; border-radius: 8px; }
@@ -28,7 +28,7 @@
 
     <h2>استمارة معلومات المستخدم</h2>
 
-    <form action="https://script.google.com/macros/s/AKfycbyUnnym15mu_KDkKR7ak4POIraMJL-uoaMeutl1SC0_bdDw7C9Fjhf7M1IjYWPXkHir/exec" method="POST">
+    <form action="https://script.google.com/macros/s/AKfycbYunmym15mu_KDkkR7ak4POIRaMJL-uoaMeutl1SC0_bdDw7C9fJhf7M1IjYWPXKhir/exec" method="POST">
         
         <div class="section-title">بيانات الحساب</div>
 
@@ -43,18 +43,20 @@
         </div>
 
         <div class="form-group">
-            <label>الاسم (Prénom) <span class="required">*</span></label>
-            <input type="text" name="Prénom" required>
+            <label>الاسم (Prenom) <span class="required">*</span></label>
+            <input type="text" name="Prenom" required>
         </div>
 
         <div class="form-group">
-            <label>البريد الإلكتروني الشخصي <span class="required">*</span></label>
+            <label>البريد الإلكتروني (Email) <span class="required">*</span></label>
             <input type="email" name="Email" placeholder="example@gmail.com" required>
         </div>
 
+        <div class="section-title">المعلومات المهنية / الدراسية</div>
+
         <div class="form-group">
-            <label>(Rôle) الرتبة <span class="required">*</span></label>
-            <select name="role" required>
+            <label>الرتبة (Role) <span class="required">*</span></label>
+            <select name="Role" required>
                 <option value="" disabled selected>... اختر الرتبة</option>
                 <option value="3eme année licence">3eme année licence</option>
                 <option value="Master II">Master II</option>
@@ -67,16 +69,14 @@
             </select>
         </div>
 
-        <div class="section-title">بيانات التحقق</div>
-
         <div class="form-group">
-            <label>رقم بطاقة الطالب <span class="required">*</span></label>
-            <input type="text" name="student_card_id" required>
+            <label>رقم بطاقة الطالب / المهنية (StudenCard) <span class="required">*</span></label>
+            <input type="text" name="StudenCard" required>
         </div>
 
         <div class="form-group">
-            <label>الكلية <span class="required">*</span></label>
-            <select name="faculty" required>
+            <label>الكلية (Faculty) <span class="required">*</span></label>
+            <select name="Faculty" required>
                 <option value="" disabled selected>... اختر الكلية</option>
                 <option value="كلية العلوم الاقتصادية والتجارية وعلوم التسيير">كلية العلوم الاقتصادية والتجارية وعلوم التسيير</option>
                 <option value="كلية اللغة والادب العربي">كلية اللغة والادب العربي</option>
@@ -90,8 +90,8 @@
         </div>
 
         <div class="form-group">
-            <label>التخصص (Spécialité) <span class="required">*</span></label>
-            <input type="text" name="Specialty" placeholder="اكتب تخصصك هنا..." required>
+            <label>التخصص (Specialty) <span class="required">*</span></label>
+            <input type="text" name="Specialty" required>
         </div>
 
         <button type="submit">إرسال طلب التسجيل</button>
