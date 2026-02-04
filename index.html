@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة معلومات المستخدم - SNDL</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 8px solid #8cb43f; }
+        .header-image { text-align: center; margin-bottom: 20px; }
+        .header-image img { max-width: 80%; height: auto; border-radius: 8px; }
+        h2 { text-align: center; color: #333; margin-top: 0; }
+        .section-title { background: #f9f9f9; padding: 10px; border-right: 5px solid #8cb43f; margin: 20px 0 15px; font-weight: bold; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #8cb43f; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #6d8d31; }
+        .required { color: red; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-image">
+        <img src="21.png" alt="جامعة تيبازة - المكتبة المركزية">
+    </div>
+
+    <h2>استمارة معلومات المستخدم</h2>
+
+    <form action="https://script.google.com/macros/s/AKfycbyUnnym15mu_KDkKR7ak4POIraMJL-uoaMeutl1SC0_bdDw7C9Fjhf7M1IjYWPXkHir/exec" method="POST">
+        
+        <div class="section-title">بيانات الحساب</div>
+
+        <div class="form-group">
+            <label>اسم المستخدم (Identifiant) <span class="required">*</span></label>
+            <input type="text" name="Identifiant" placeholder="مثال: user_2026" required>
+        </div>
+
+        <div class="form-group">
+            <label>اللقب (Nom) <span class="required">*</span></label>
+            <input type="text" name="Nom" required>
+        </div>
+
+        <div class="form-group">
+            <label>الاسم (Prénom) <span class="required">*</span></label>
+            <input type="text" name="Prénom" required>
+        </div>
+
+        <div class="form-group">
+            <label>البريد الإلكتروني الشخصي <span class="required">*</span></label>
+            <input type="email" name="Email" placeholder="example@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label>(Rôle) الرتبة <span class="required">*</span></label>
+            <select name="role" required>
+                <option value="" disabled selected>... اختر الرتبة</option>
+                <option value="3eme année licence">3eme année licence</option>
+                <option value="Master II">Master II</option>
+                <option value="5 ème année Ingenieur">5 ème année Ingenieur</option>
+                <option value="5 ème année et plus sciences médicales">5 ème année et plus sciences médicales</option>
+                <option value="Post-graduant Magister">Post-graduant Magister</option>
+                <option value="Post-graduant Doctorant">Post-graduant Doctorant</option>
+                <option value="Enseignant">Enseignant</option>
+                <option value="Sciences Médicales">Sciences Médicales</option>
+            </select>
+        </div>
+
+        <div class="section-title">بيانات التحقق</div>
+
+        <div class="form-group">
+            <label>رقم بطاقة الطالب <span class="required">*</span></label>
+            <input type="text" name="student_card_id" required>
+        </div>
+
+        <div class="form-group">
+            <label>الكلية <span class="required">*</span></label>
+            <select name="faculty" required>
+                <option value="" disabled selected>... اختر الكلية</option>
+                <option value="كلية العلوم الاقتصادية والتجارية وعلوم التسيير">كلية العلوم الاقتصادية والتجارية وعلوم التسيير</option>
+                <option value="كلية اللغة والادب العربي">كلية اللغة والادب العربي</option>
+                <option value="كلية العلوم">كلية العلوم</option>
+                <option value="كلية العلوم الطبيعية والحياة">كلية العلوم الطبيعية والحياة</option>
+                <option value="ملحقة الطب">ملحقة الطب</option>
+                <option value="المدرسة العليا للاساتذة">المدرسة العليا للاساتذة</option>
+                <option value="كلية العلوم الانسانية والاجتماعية">كلية العلوم الانسانية والاجتماعية</option>
+                <option value="كلية الحقوق والعلوم السياسية">كلية الحقوق والعلوم السياسية</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>التخصص (Spécialité) <span class="required">*</span></label>
+            <input type="text" name="Specialty" placeholder="اكتب تخصصك هنا..." required>
+        </div>
+
+        <button type="submit">إرسال طلب التسجيل</button>
+    </form>
+</div>
+
+</body>
+</html>
