@@ -94,9 +94,51 @@
             <input type="text" name="Specialty" required>
         </div>
 
-        <button type="submit">إرسال طلب التسجيل</button>
+        <button type="submit" id="submitBtn">إرسال طلب التسجيل</button>
     </form>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const form = document.querySelector('form');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // منع فتح الصفحة البيضاء
+        
+        btn.disabled = true;
+        btn.innerText = "جاري الإرسال...";
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => {
+            // إظهار الورقة المنبثقة للطالب عند النجاح
+            Swal.fire({
+                title: 'تم الإرسال بنجاح!',
+                text: 'شكراً لك، لقد تم استلام معلوماتك بنجاح في نظام SNDL.',
+                icon: 'success',
+                confirmButtonText: 'حسناً',
+                confirmButtonColor: '#8cb43f'
+            });
+            form.reset(); // تفريغ الحقول
+            btn.disabled = false;
+            btn.innerText = "إرسال طلب التسجيل";
+        })
+        .catch(error => {
+            Swal.fire({
+                title: 'خطأ!',
+                text: 'حدثت مشكلة أثناء الإرسال، يرجى التحقق من الاتصال بالإنترنت.',
+                icon: 'error',
+                confirmButtonText: 'إغلاق'
+            });
+            btn.disabled = false;
+            btn.innerText = "إرسال طلب التسجيل";
+        });
+    });
+</script>
 
 </body>
 </html>
